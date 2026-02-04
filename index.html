@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MJ Web Pro</title>
+  <meta name="description" content="Sites web, automatisations IA et outils digitaux pour gagner du temps et générer plus de clients." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="page-bg" aria-hidden="true"></div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="MJ Web Pro">
+        <img class="logo" src="logo.png" alt="MJ Web Pro" />
+        <div class="brand-text">
+          <div class="brand-name">MJ Web Pro</div>
+          <div class="brand-sub">Sites web • IA • Visibilité</div>
+        </div>
+      </a>
+
+      <!-- NAV DESKTOP -->
+      <nav class="nav" aria-label="Navigation principale">
+        <a class="nav-link" href="#services">Services</a>
+        <a class="nav-link" href="#process">Process</a>
+        <a class="nav-link" href="#contact">Contact</a>
+        <a class="btn btn-accent" href="#contact">Demander un devis</a>
+      </nav>
+
+      <!-- BURGER MOBILE -->
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" type="button">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- NAV MOBILE -->
+    <div class="mobile-nav" id="mobileNav" aria-label="Navigation mobile">
+      <div class="container mobile-nav-inner">
+        <a class="nav-link" href="#services">Services</a>
+        <a class="nav-link" href="#process">Process</a>
+        <a class="nav-link" href="#contact">Contact</a>
+        <a class="btn btn-accent mobile-cta" href="#contact">Demander un devis</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-wrap">
+        <h1 class="hero-title">Solutions digitales adaptées à votre activité</h1>
+        <p class="subtitle">
+          Sites web, automatisations IA et visibilité en ligne pour gagner du temps et attirer plus de clients.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-lg btn-accent" href="#contact">Me contacter</a>
+          <a class="btn btn-lg" href="#services">Voir les services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Services</h2>
+          <p class="section-sub muted">Simple, clair, orienté résultats.</p>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <div class="tag">Site web</div>
+            <div class="card-title">Site vitrine premium</div>
+            <div class="card-desc">
+              Une page (ou quelques pages) claire, rapide, mobile, qui inspire confiance.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="tag">Visibilité</div>
+            <div class="card-title">Contenu & pubs locales</div>
+            <div class="card-desc">
+              Vidéos / visuels + publicités Instagram pour attirer plus de clients près de vous.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="tag">IA</div>
+            <div class="card-title">Automatisations simples</div>
+            <div class="card-desc">
+              Réponses auto, prise de contact, formulaires : moins de temps perdu, plus d’efficacité.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Process</h2>
+          <p class="section-sub muted">Clair, net, rapide et sans prise de tête</p>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <div class="step">1</div>
+            <div class="card-title">Diagnostic</div>
+            <div class="card-desc">
+              On identifie ce qui apporte le plus de résultats.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="step">2</div>
+            <div class="card-title">Devis</div>
+            <div class="card-desc">
+              Devis clair + plan simple. Validation → on lance.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="step">3</div>
+            <div class="card-title">Livraison</div>
+            <div class="card-desc">
+              Mise en ligne, contenu prêt, automatisations actives.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Contact</h2>
+          <p class="section-sub muted">
+            Dites-moi ce que vous voulez améliorer, je réponds rapidement.
+          </p>
+        </div>
+
+        <div class="contact-row">
+          <a class="card contact" href="mailto:mjwebpro.fr@gmail.com">
+            <div class="iconbox">✉️</div>
+            <div>
+              <div class="card-title">Email</div>
+              <div class="card-desc">mjwebpro.fr@gmail.com</div>
+            </div>
+          </a>
+
+          <a class="card contact" href="https://instagram.com/mjwebpro" target="_blank" rel="noreferrer">
+            <div class="iconbox">📷</div>
+            <div>
+              <div class="card-title">Instagram</div>
+              <div class="card-desc">@mjwebpro</div>
+            </div>
+          </a>
+        </div>
+
+        <footer class="footer">
+          © <span id="year"></span> MJ Web Pro. Tous droits réservés.
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const burger = document.getElementById("burger");
+    const mobileNav = document.getElementById("mobileNav");
+
+    function closeMenu() {
+      mobileNav.classList.remove("open");
+      burger.setAttribute("aria-expanded", "false");
+    }
+
+    burger.addEventListener("click", () => {
+      const isOpen = mobileNav.classList.toggle("open");
+      burger.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    mobileNav.querySelectorAll("a").forEach(a =>
+      a.addEventListener("click", closeMenu)
+    );
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 980) closeMenu();
+    });
+
+    const easeInOutCubic = (t) =>
+      t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener("click", (e) => {
+        const id = link.getAttribute("href");
+        if (id.length <= 1) return;
+
+        const target = document.querySelector(id);
+        if (!target) return;
+
+        e.preventDefault();
+        const headerOffset = 84;
+        const targetY = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+
+        const startY = window.scrollY;
+        const delta = targetY - startY;
+        const startTime = performance.now();
+        const duration = 850;
+
+        function tick(now) {
+          const elapsed = now - startTime;
+          const p = Math.min(elapsed / duration, 1);
+          const e2 = easeInOutCubic(p);
+          window.scrollTo(0, startY + delta * e2);
+          if (p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      });
+    });
+  </script>
+</body>
+</html>
