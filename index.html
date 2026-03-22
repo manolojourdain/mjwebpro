@@ -699,7 +699,7 @@
 
         <!-- Droite : formulaire -->
         <div class="contact-right">
-          <form id="contactForm">
+          <form id="contactForm" action="https://formspree.io/f/xvzwjzol" method="POST">
             <div class="form-row">
               <div class="form-group">
                 <label>Prénom</label>
@@ -782,13 +782,24 @@
     }, { threshold: 0.08 });
     document.querySelectorAll('.r').forEach(el => obs.observe(el));
 
-    // Formulaire — simulation envoi
-    // Pour connecter à un vrai backend, remplacez le contenu du submit par un fetch() vers votre API ou Formspree
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
+    // Formulaire — envoi via Formspree
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
       e.preventDefault();
-      this.style.display = 'none';
-      const success = document.getElementById('formSuccess');
-      success.style.display = 'flex';
+      const btn = this.querySelector('.form-submit');
+      btn.textContent = 'Envoi en cours…';
+      btn.disabled = true;
+      const response = await fetch(this.action, {
+        method: 'POST',
+        body: new FormData(this),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        this.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'flex';
+      } else {
+        btn.textContent = 'Erreur — réessayez';
+        btn.disabled = false;
+      }
     });
   </script>
 </body>
